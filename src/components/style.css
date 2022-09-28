@@ -10,7 +10,6 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    gap: 1rem;
     padding: 1rem;
 }
 
@@ -19,15 +18,17 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid #000000;
+    background-color: rgba(0, 0, 0, 0.1);
     transform-origin: right bottom;
-
     max-width: 650px;
+    margin-inline: 0.5rem;
 }
 .Frame.Hide {
     writing-mode: sideways-lr;
     white-space: nowrap;
     border-bottom: none;
+    margin-inline: 0;
+    margin-block-start: 0.2rem;
 }
 
 .Frame .Header {
@@ -35,21 +36,23 @@ body {
     display: flex;
     gap: 5px;
     align-items: center;
-    border-bottom: 1px solid #000000;
+    background-color: rgba(0,0,0,0.1);
+    cursor: default;
 }
 
 .Frame .Header .Title {
-    margin: 0 0 0 5px;
+    margin: 0;
+    padding-inline: 5px;
     flex-grow: 1;
     font-size: 1.2rem;
     font-family: Verdana, sans-serif;
     text-align: center;
 }
-.Frame.Hide .Header .Title {
-    margin: 0 0 5px 0;
-}
 
 .Frame .Header .Minimize {
+    padding: 0;
+    padding-inline: 5px;
+    padding-block: 2px;
     font-size: 1.0rem;
     cursor: pointer;
     border: none;
@@ -62,7 +65,7 @@ body {
     content: "\2610";
 }
 .Frame .Header .Minimize:hover {
-    background-color: lightgray;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .Frame .Body {
